@@ -35,6 +35,8 @@ main {
   justify-content: center;
   align-items: center;
   background-color: azure;
+  cursor: pointer;
+  background-color: wheat;
 }
 .die-num {
   font-size: 2rem;
