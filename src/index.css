@@ -36,7 +36,6 @@ main {
   align-items: center;
   background-color: azure;
   cursor: pointer;
-  background-color: rgb(255, 215, 105);
 }
 .die-num {
   font-size: 2rem;
