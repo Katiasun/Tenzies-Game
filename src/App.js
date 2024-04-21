@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Die from "./components/Die";
 import { nanoid } from "nanoid";
 
@@ -39,6 +39,10 @@ export default function App() {
       prevDice.map((die) => (die.id === id ? { ...die, isHeld: !die.isHeld } : die))
     );
   }
+
+  useEffect(() => {
+    console.log("Dice state changed");
+  }, [dice]);
 
   return (
     <main>
