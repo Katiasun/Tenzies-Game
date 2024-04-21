@@ -3,6 +3,9 @@ import Die from "./components/Die";
 import { nanoid } from "nanoid";
 
 export default function App() {
+  const [dice, setDice] = useState(allNewDice());
+  const [tenzies, setTenzies] = useState(false);
+
   function generateNewDie() {
     return {
       value: Math.ceil(Math.random() * 6),
@@ -19,7 +22,6 @@ export default function App() {
     return newDice;
   }
 
-  const [dice, setDice] = useState(allNewDice());
   const diceElements = dice.map((die) => (
     <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />
   ));
@@ -37,6 +39,7 @@ export default function App() {
       prevDice.map((die) => (die.id === id ? { ...die, isHeld: !die.isHeld } : die))
     );
   }
+
   return (
     <main>
       <h1 className="title">Tenzies</h1>
